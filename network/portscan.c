@@ -16,24 +16,24 @@ main(int argc, char *argv[]){
 
 	for(port=init;port<limit;port++){
 
-	mysock = socket(AF_INET, SOCK_STREAM, 0);
-	target.sin_family = AF_INET;
-	target.sin_port = htons(port);
-	target.sin_addr.s_addr = inet_addr(ip);
+		mysock = socket(AF_INET, SOCK_STREAM, 0);
+		target.sin_family = AF_INET;
+		target.sin_port = htons(port);
+		target.sin_addr.s_addr = inet_addr(ip);
 
-	con = connect(mysock, (struct sockaddr *) &target, sizeof target);
-	
-	if(con == 0){
-		printf("[+] PORT %d is OPEN \n", port);
-		close(mysock);
-		close(con);
-	}
-	else{
+		con = connect(mysock, (struct sockaddr *) &target, sizeof target);
 
-		//printf("Nah, its closed... \n");
-		close(mysock);
-		close(con);
-	}
+		if(con == 0){
+			printf("[+] PORT %d is OPEN \n", port);
+			close(mysock);
+			close(con);
+		}
+		else{
+
+			//printf("Nah, its closed... \n");
+			close(mysock);
+			close(con);
+		}
 	}
 
 
