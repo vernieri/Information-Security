@@ -38,3 +38,5 @@ main(int argc, char *argv[]){
 
 
 }
+
+//gcc -o FTP_DoS FTP_DoS.c
