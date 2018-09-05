@@ -6,4 +6,8 @@ s.connect(("Target IP", 21))
 res = s.recv(1024)
 print res
 
+s.send("USER anonymous \r\n")
+x = s.recv(1024)
+print x
+
 #! ./ftpenum.py
