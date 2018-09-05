@@ -13,5 +13,10 @@ print x
 s.send("PASS ANONYMOUS \r\n)
 x = s.recv(1024)
 print x
+
+s.send("PWD \r\n")
+s.send("QUIT \r\n")
+x = s.recv(2048)
+print x    
        
 #! ./ftpenum.py
