@@ -10,4 +10,8 @@ s.send("USER anonymous \r\n")
 x = s.recv(1024)
 print x
 
+s.send("PASS ANONYMOUS \r\n)
+x = s.recv(1024)
+print x
+       
 #! ./ftpenum.py
