@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import scapy.all as scapy 
 
 ack_list = []
@@ -9,6 +8,7 @@ def set_load(packet, load):
 	del packet[scapy.IP].len
 	del packet[scapy.IP].chksum
 	del packet[scapy.TCP].chsum 
+	
 	return packet
 
 def process_packet(packet):
