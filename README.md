@@ -1,4 +1,4 @@
-# Security
+# Information Security
 
 Here i just put some security scripts like
 portscanners, some exploits and stuff.
