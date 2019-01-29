@@ -28,6 +28,7 @@ main(int argc, char *argv[]){
 			close(mysock);
 			close(con);
 		}
+		
 		else{
 
 			//printf("Nah, its closed... \n");
