@@ -32,5 +32,24 @@ def hexa(i, lista):
 	hexd = hex(i)
 	str(hexd)
 	lista.append(hexd)
-		
+
+def find_str(s, char):
+    index = 0
+
+    if char in s:
+        c = char[0]
+        for ch in s:
+            if ch == c:
+                if s[index:index+len(char)] == char:
+                    return index
+
+            index += 1
+
+    return -1
+
+def finder(s, number):
+	#number = '4db0x4dc'
+	print(find_str(s, number))
+
+	
 starter()		
