@@ -27,5 +27,10 @@ def loop(value):
 	else:
 		exit()
 
-
+def hexa(i, lista):
+	#Transforma em Hexa
+	hexd = hex(i)
+	str(hexd)
+	lista.append(hexd)
+		
 starter()		
