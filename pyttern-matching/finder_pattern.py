@@ -20,3 +20,8 @@ def find_str(s, char):
             index += 1
 
     return -1
+
+def finder(s, number):
+	print(find_str(s, number))	
+
+starter()
