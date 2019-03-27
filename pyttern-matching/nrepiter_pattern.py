@@ -47,6 +47,7 @@ def find_str(s, char):
 
     return -1
 
+
 def finder(s, number):
 	#number = '4db0x4dc'
 	print(find_str(s, number))
