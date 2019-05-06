@@ -34,6 +34,7 @@ def hexa(i, lista):
 	str(hexd)
 	lista.append(hexd)
 
+	
 def find_str(s, char):
     index = 0
 
