@@ -1,4 +1,5 @@
 #Some imports here
+#You can find the pattern here.
 
 def starter():
 	value = raw_input('Quantidade: ')
