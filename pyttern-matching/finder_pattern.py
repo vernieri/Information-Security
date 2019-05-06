@@ -25,4 +25,4 @@ def find_str(s, char):
 def finder(s, number):
 	print(find_str(s, number))	
 
-starter()
+starter() #Obvious Method
