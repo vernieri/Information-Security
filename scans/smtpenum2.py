@@ -4,6 +4,7 @@ import socket
 import sys
 import re
 
+#
 file = open('YOUR_LIST_HERE.txt')
 for linha in file.readlines():
   s = socket.socket(socket.AF_INET, SOCK_STREAM)
